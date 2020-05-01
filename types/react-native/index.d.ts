@@ -3815,6 +3815,12 @@ declare class ImageComponent extends React.Component<ImageProps> {}
 declare const ImageBase: Constructor<NativeMethodsMixinType> & typeof ImageComponent;
 export class Image extends ImageBase {
     static getSize(uri: string, success: (width: number, height: number) => void, failure: (error: any) => void): any;
+    static getSizeWithHeaders(
+        uri: string,
+        headers: { [key: string]: string },
+        success: (width: number, height: number) => void,
+        failure: (error: any) => void,
+    ): any;
     static prefetch(url: string): any;
     static abortPrefetch?(requestId: number): void;
     static queryCache?(urls: string[]): Promise<{ [url: string]: 'memory' | 'disk' | 'disk/memory' }>;
